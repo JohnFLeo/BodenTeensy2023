@@ -121,8 +121,8 @@ void testValues(){
 }
 void testInterrupts(){
     for(int i = 0; i < 32; i++) {
-        //if(!(i==11||i==18||i==19||i==26||i==28||i==8)) {
-        if(!(i==3||i==8||i==11||i==13||i==14||i==16||i==18||i==23||i==25||i==28)){//für teensy mit "1"3,8,11,13,14,16,18,23,25
+        if(!(i==11||i==18||i==19||i==26||i==28||i==8||i==2||i==9||i==10||i==21||i==23||i==24||i==25||i==27||i==30||i==31)) {
+        //if(!(i==3||i==8||i==11||i==13||i==14||i==16||i==18||i==23||i==25||i==28)){//für teensy mit "1"3,8,11,13,14,16,18,23,25
             Serial.print(i);
             Serial.print(": ");
             Serial.print(boden.getBoden(i).getControllRegister() & 0b00100011, BIN);
@@ -140,8 +140,8 @@ void isInterrupt(){
         timestamp = 0;
     }
     for (int i = 0; i < 32; ++i) {
-        //if(!(i==11||i==18||i==19||i==26||i==28||i==8)){
-        if(!(i==3||i==8||i==11||i==13||i==14||i==16||i==18||i==23||i==25||i==28)){//für Bodenplatine mit "1"
+        if(!(i==11||i==18||i==19||i==26||i==28||i==8||i==2||i==9||i==10||i==21||i==23||i==24||i==25||i==27||i==30||i==31)){
+        //if(!(i==3||i==8||i==11||i==13||i==14||i==16||i==18||i==23||i==25||i==28)){//für Bodenplatine mit "1"
             if((boden.getBoden(i).getControllRegister() & 0b00100011) == 0b00100011){//Interrupt an Sensor i
                 //Kontrolle ob erster Interrupt
                 if(firstInterrupt == 32){//32 bedeutet kein erster Interrupt gespeichert
